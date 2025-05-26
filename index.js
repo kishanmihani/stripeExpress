@@ -5,7 +5,7 @@ const Stripe = require('stripe');
 const cors = require('cors');
 
 const app = express();
-const PORT =  4242;
+const PORT =   process.env.PORT || 4000 ;
 
 // Middleware
 app.use(cors());
