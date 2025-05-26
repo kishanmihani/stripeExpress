@@ -1,4 +1,5 @@
 // server.js
+require('dotenv').config();
 const express = require('express');
 const Stripe = require('stripe');
 const cors = require('cors');
@@ -11,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize Stripe with secret key
-const stripe = Stripe('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 // POST endpoint to create a payment intent
 app.post('/create-payment-intent', async (req, res) => {
