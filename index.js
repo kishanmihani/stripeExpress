@@ -18,6 +18,9 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 // POST endpoint to create a payment intent
 app.get("/app-status", async (req, res) => {
   const transporter = nodemailer.createTransport({
+    host:"https://stripeexpress-1.onrender.com",
+    // port: 465,
+    secure: true,
     service: "gmail",
     auth: {
       user: "kishanmihani865@gmail.com",
